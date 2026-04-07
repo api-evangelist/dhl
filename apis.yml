@@ -1,13 +1,12 @@
 aid: dhl
-url: 
-  https://raw.githubusercontent.com/api-evangelist/dhl/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/dhl/refs/heads/main/apis.yml
 apis:
   - aid: dhl:dhl
     name: DHL
     tags:
+      - Freight
       - Logistics
       - Shipping
-      - Freight
     humanURL: ' https://developer.dhl.com/'
     properties:
       - url: ' https://developer.dhl.com/'
@@ -20,9 +19,9 @@ apis:
       vehicles to ensure that packages are transported quickly and efficiently.
 name: DHL
 tags:
+  - Freight
   - Logistics
   - Shipping
-  - Freight
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
