@@ -1,0 +1,324 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: DHL
+providerId: dhl
+created: '2026-05-04'
+modified: '2026-05-04'
+tags:
+  - Freight
+  - Logistics
+  - Shipping
+  - eCommerce
+  - Tracking
+  - Rate Limiting
+  - Quotas
+  - Throttling
+description: Machine-readable rate limit definitions for the DHL API surface. Captures per-tier quotas,
+  burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to be replaced
+  with published provider limits.
+headers:
+  limit: X-RateLimit-Limit
+  remaining: X-RateLimit-Remaining
+  reset: X-RateLimit-Reset
+  retryAfter: Retry-After
+  policy: RateLimit-Policy
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+  serviceUnavailable: 503
+limits:
+  - tier: free
+    name: Free Tier Default
+    scope: api-key
+    metric: requests_per_minute
+    limit: 10
+    burst: 20
+    timeFrame: minute
+    applies:
+      - Location Finder Unified
+      - Shipment Tracking Unified
+      - Shipment Tracking Unified Push
+      - User Guide DHL eCommerce Americas
+      - Additional Services DHL Freight
+      - Authentication DHL eCommerce Americas
+      - Authentication API DHL Freight
+      - Authentication API Post Parcel Germany
+      - Changelog DHL eCommerce Americas
+      - DATAFACTORY AUTOCOMPLETE 2.0
+      - Deutsche Post Hybrid Mail Shipments E-POST
+      - Deutsche Post International
+      - Deutsche Post INTERNETMARKE
+      - Deutsche Post Order Management AM
+      - Deutsche Post Print-Mailing Dispatch Preparation
+      - Deutsche Post Print-Mailing Targeting
+      - DHL eCommerce Europe eConnect
+      - DHL eCommerce Europe eConnect Beta
+      - DHL Parcel DE Pickup
+      - DHL Parcel DE Postnumber
+      - DHL Parcel DE Private Shipping
+      - DHL Parcel DE Returns
+      - DHL Parcel DE Shipping
+      - DHL Parcel DE Tracking
+      - Document DHL Global Forwarding
+      - Duty and Tax DHL eCommerce Americas
+      - Duty and Tax Calculator Unified
+      - DHL eCommerce UK
+      - Parcel EU BE LU NL
+      - Pickup Cancellation DHL eCommerce India
+      - Price Quote DHL Freight
+      - Print DHL Freight
+      - Product DHL Freight
+      - Product and Sub-Product Pickup Detail DHL eCommerce India
+      - Product Finder DHL eCommerce Americas
+      - Products API Post Parcel Germany
+      - Push API DHL Global Forwarding
+      - References DHL eCommerce Americas
+      - Registration for Pickup DHL eCommerce India
+      - Return Label DHL eCommerce Americas
+      - Shipment Booking DHL Freight
+      - Shipment Booking DHL Global Forwarding
+      - Shipment Label DHL Global Forwarding
+      - Shipment Status DHL Global Forwarding
+      - Shipment Tracking DHL eCommerce India
+      - Shipment Tracking v2 DHL Global Forwarding
+      - Time Table DHL Freight
+      - Tracking DHL eCommerce Americas
+  - tier: free
+    name: Free Tier Monthly Quota
+    scope: api-key
+    metric: requests_per_month
+    limit: 1000
+    timeFrame: month
+    applies:
+      - Location Finder Unified
+      - Shipment Tracking Unified
+      - Shipment Tracking Unified Push
+      - User Guide DHL eCommerce Americas
+      - Additional Services DHL Freight
+      - Authentication DHL eCommerce Americas
+      - Authentication API DHL Freight
+      - Authentication API Post Parcel Germany
+      - Changelog DHL eCommerce Americas
+      - DATAFACTORY AUTOCOMPLETE 2.0
+      - Deutsche Post Hybrid Mail Shipments E-POST
+      - Deutsche Post International
+      - Deutsche Post INTERNETMARKE
+      - Deutsche Post Order Management AM
+      - Deutsche Post Print-Mailing Dispatch Preparation
+      - Deutsche Post Print-Mailing Targeting
+      - DHL eCommerce Europe eConnect
+      - DHL eCommerce Europe eConnect Beta
+      - DHL Parcel DE Pickup
+      - DHL Parcel DE Postnumber
+      - DHL Parcel DE Private Shipping
+      - DHL Parcel DE Returns
+      - DHL Parcel DE Shipping
+      - DHL Parcel DE Tracking
+      - Document DHL Global Forwarding
+      - Duty and Tax DHL eCommerce Americas
+      - Duty and Tax Calculator Unified
+      - DHL eCommerce UK
+      - Parcel EU BE LU NL
+      - Pickup Cancellation DHL eCommerce India
+      - Price Quote DHL Freight
+      - Print DHL Freight
+      - Product DHL Freight
+      - Product and Sub-Product Pickup Detail DHL eCommerce India
+      - Product Finder DHL eCommerce Americas
+      - Products API Post Parcel Germany
+      - Push API DHL Global Forwarding
+      - References DHL eCommerce Americas
+      - Registration for Pickup DHL eCommerce India
+      - Return Label DHL eCommerce Americas
+      - Shipment Booking DHL Freight
+      - Shipment Booking DHL Global Forwarding
+      - Shipment Label DHL Global Forwarding
+      - Shipment Status DHL Global Forwarding
+      - Shipment Tracking DHL eCommerce India
+      - Shipment Tracking v2 DHL Global Forwarding
+      - Time Table DHL Freight
+      - Tracking DHL eCommerce Americas
+  - tier: professional
+    name: Professional Tier Default
+    scope: api-key
+    metric: requests_per_minute
+    limit: 100
+    burst: 200
+    timeFrame: minute
+    applies:
+      - Location Finder Unified
+      - Shipment Tracking Unified
+      - Shipment Tracking Unified Push
+      - User Guide DHL eCommerce Americas
+      - Additional Services DHL Freight
+      - Authentication DHL eCommerce Americas
+      - Authentication API DHL Freight
+      - Authentication API Post Parcel Germany
+      - Changelog DHL eCommerce Americas
+      - DATAFACTORY AUTOCOMPLETE 2.0
+      - Deutsche Post Hybrid Mail Shipments E-POST
+      - Deutsche Post International
+      - Deutsche Post INTERNETMARKE
+      - Deutsche Post Order Management AM
+      - Deutsche Post Print-Mailing Dispatch Preparation
+      - Deutsche Post Print-Mailing Targeting
+      - DHL eCommerce Europe eConnect
+      - DHL eCommerce Europe eConnect Beta
+      - DHL Parcel DE Pickup
+      - DHL Parcel DE Postnumber
+      - DHL Parcel DE Private Shipping
+      - DHL Parcel DE Returns
+      - DHL Parcel DE Shipping
+      - DHL Parcel DE Tracking
+      - Document DHL Global Forwarding
+      - Duty and Tax DHL eCommerce Americas
+      - Duty and Tax Calculator Unified
+      - DHL eCommerce UK
+      - Parcel EU BE LU NL
+      - Pickup Cancellation DHL eCommerce India
+      - Price Quote DHL Freight
+      - Print DHL Freight
+      - Product DHL Freight
+      - Product and Sub-Product Pickup Detail DHL eCommerce India
+      - Product Finder DHL eCommerce Americas
+      - Products API Post Parcel Germany
+      - Push API DHL Global Forwarding
+      - References DHL eCommerce Americas
+      - Registration for Pickup DHL eCommerce India
+      - Return Label DHL eCommerce Americas
+      - Shipment Booking DHL Freight
+      - Shipment Booking DHL Global Forwarding
+      - Shipment Label DHL Global Forwarding
+      - Shipment Status DHL Global Forwarding
+      - Shipment Tracking DHL eCommerce India
+      - Shipment Tracking v2 DHL Global Forwarding
+      - Time Table DHL Freight
+      - Tracking DHL eCommerce Americas
+  - tier: professional
+    name: Professional Tier Monthly Quota
+    scope: api-key
+    metric: requests_per_month
+    limit: 100000
+    timeFrame: month
+    applies:
+      - Location Finder Unified
+      - Shipment Tracking Unified
+      - Shipment Tracking Unified Push
+      - User Guide DHL eCommerce Americas
+      - Additional Services DHL Freight
+      - Authentication DHL eCommerce Americas
+      - Authentication API DHL Freight
+      - Authentication API Post Parcel Germany
+      - Changelog DHL eCommerce Americas
+      - DATAFACTORY AUTOCOMPLETE 2.0
+      - Deutsche Post Hybrid Mail Shipments E-POST
+      - Deutsche Post International
+      - Deutsche Post INTERNETMARKE
+      - Deutsche Post Order Management AM
+      - Deutsche Post Print-Mailing Dispatch Preparation
+      - Deutsche Post Print-Mailing Targeting
+      - DHL eCommerce Europe eConnect
+      - DHL eCommerce Europe eConnect Beta
+      - DHL Parcel DE Pickup
+      - DHL Parcel DE Postnumber
+      - DHL Parcel DE Private Shipping
+      - DHL Parcel DE Returns
+      - DHL Parcel DE Shipping
+      - DHL Parcel DE Tracking
+      - Document DHL Global Forwarding
+      - Duty and Tax DHL eCommerce Americas
+      - Duty and Tax Calculator Unified
+      - DHL eCommerce UK
+      - Parcel EU BE LU NL
+      - Pickup Cancellation DHL eCommerce India
+      - Price Quote DHL Freight
+      - Print DHL Freight
+      - Product DHL Freight
+      - Product and Sub-Product Pickup Detail DHL eCommerce India
+      - Product Finder DHL eCommerce Americas
+      - Products API Post Parcel Germany
+      - Push API DHL Global Forwarding
+      - References DHL eCommerce Americas
+      - Registration for Pickup DHL eCommerce India
+      - Return Label DHL eCommerce Americas
+      - Shipment Booking DHL Freight
+      - Shipment Booking DHL Global Forwarding
+      - Shipment Label DHL Global Forwarding
+      - Shipment Status DHL Global Forwarding
+      - Shipment Tracking DHL eCommerce India
+      - Shipment Tracking v2 DHL Global Forwarding
+      - Time Table DHL Freight
+      - Tracking DHL eCommerce Americas
+  - tier: enterprise
+    name: Enterprise Negotiated Limit
+    scope: contract
+    metric: requests_per_minute
+    limit: 1000
+    burst: 5000
+    timeFrame: minute
+    applies:
+      - Location Finder Unified
+      - Shipment Tracking Unified
+      - Shipment Tracking Unified Push
+      - User Guide DHL eCommerce Americas
+      - Additional Services DHL Freight
+      - Authentication DHL eCommerce Americas
+      - Authentication API DHL Freight
+      - Authentication API Post Parcel Germany
+      - Changelog DHL eCommerce Americas
+      - DATAFACTORY AUTOCOMPLETE 2.0
+      - Deutsche Post Hybrid Mail Shipments E-POST
+      - Deutsche Post International
+      - Deutsche Post INTERNETMARKE
+      - Deutsche Post Order Management AM
+      - Deutsche Post Print-Mailing Dispatch Preparation
+      - Deutsche Post Print-Mailing Targeting
+      - DHL eCommerce Europe eConnect
+      - DHL eCommerce Europe eConnect Beta
+      - DHL Parcel DE Pickup
+      - DHL Parcel DE Postnumber
+      - DHL Parcel DE Private Shipping
+      - DHL Parcel DE Returns
+      - DHL Parcel DE Shipping
+      - DHL Parcel DE Tracking
+      - Document DHL Global Forwarding
+      - Duty and Tax DHL eCommerce Americas
+      - Duty and Tax Calculator Unified
+      - DHL eCommerce UK
+      - Parcel EU BE LU NL
+      - Pickup Cancellation DHL eCommerce India
+      - Price Quote DHL Freight
+      - Print DHL Freight
+      - Product DHL Freight
+      - Product and Sub-Product Pickup Detail DHL eCommerce India
+      - Product Finder DHL eCommerce Americas
+      - Products API Post Parcel Germany
+      - Push API DHL Global Forwarding
+      - References DHL eCommerce Americas
+      - Registration for Pickup DHL eCommerce India
+      - Return Label DHL eCommerce Americas
+      - Shipment Booking DHL Freight
+      - Shipment Booking DHL Global Forwarding
+      - Shipment Label DHL Global Forwarding
+      - Shipment Status DHL Global Forwarding
+      - Shipment Tracking DHL eCommerce India
+      - Shipment Tracking v2 DHL Global Forwarding
+      - Time Table DHL Freight
+      - Tracking DHL eCommerce Americas
+policies:
+  - name: Backoff Strategy
+    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
+      when present.
+  - name: Burst Handling
+    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
+      before throttling engages.
+  - name: Quota Reset
+    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
+      windows reset on a sliding-window basis.
+  - name: Fair Use
+    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
+      may be subject to fair-use throttling.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
