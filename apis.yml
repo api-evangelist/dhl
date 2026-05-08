@@ -32,6 +32,8 @@ apis:
     properties:
       - type: Documentation
         url: https://developer.dhl.com/api-reference/location-finder-unified
+      - type: OpenAPI
+        url: openapi/dhl-openapi.yml
     description: >-
       Provides a single interface to discover all DHL locations that handle parcels
       and letters across multiple DHL divisions including Post and Parcel Germany,
