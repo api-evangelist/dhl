@@ -1,0 +1,241 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: DHL Location Finder Unified API
+  description: 'DHL Location Finder Unified API. 4 operations. Lead operation: Find Service Points by address. Self-contained
+    Naftiko capability covering one Dhl business surface.'
+  tags:
+  - Dhl
+  - DHL Location Finder Unified API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DHL_API_KEY: DHL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: dhl
+    baseUri: https://api.dhl.com/location-finder/v1
+    description: DHL Location Finder Unified API business capability. Self-contained, no shared references.
+    resources:
+    - name: find-by-address
+      path: /find-by-address
+      operations:
+      - name: findbyaddress
+        method: GET
+        description: Find Service Points by address
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: countryCode
+          in: query
+          type: string
+          required: true
+        - name: postalCode
+          in: query
+          type: string
+        - name: addressLocality
+          in: query
+          type: string
+        - name: streetAddress
+          in: query
+          type: string
+    - name: find-by-geo
+      path: /find-by-geo
+      operations:
+      - name: findbygeo
+        method: GET
+        description: Find Service Points by geographic coordinates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: latitude
+          in: query
+          type: number
+          required: true
+        - name: longitude
+          in: query
+          type: number
+          required: true
+        - name: countryCode
+          in: query
+          type: string
+    - name: find-by-keyword-id-keywordId
+      path: /find-by-keyword-id/{keywordId}
+      operations:
+      - name: findbykeywordid
+        method: GET
+        description: Find Service Points by keyword ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: keywordId
+          in: path
+          type: string
+          required: true
+        - name: countryCode
+          in: query
+          type: string
+          required: true
+        - name: postalCode
+          in: query
+          type: string
+    - name: find-by-location-id-id
+      path: /find-by-location-id/{id}
+      operations:
+      - name: findbylocationid
+        method: GET
+        description: Find Service Point by location ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: DHL-API-Key
+      value: '{{env.DHL_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: dhl-rest
+    port: 8080
+    description: REST adapter for DHL Location Finder Unified API. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/find-by-address
+      name: find-by-address
+      description: REST surface for find-by-address.
+      operations:
+      - method: GET
+        name: findbyaddress
+        description: Find Service Points by address
+        call: dhl.findbyaddress
+        with:
+          countryCode: rest.countryCode
+          postalCode: rest.postalCode
+          addressLocality: rest.addressLocality
+          streetAddress: rest.streetAddress
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/find-by-geo
+      name: find-by-geo
+      description: REST surface for find-by-geo.
+      operations:
+      - method: GET
+        name: findbygeo
+        description: Find Service Points by geographic coordinates
+        call: dhl.findbygeo
+        with:
+          latitude: rest.latitude
+          longitude: rest.longitude
+          countryCode: rest.countryCode
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/find-by-keyword-id/{keywordid}
+      name: find-by-keyword-id-keywordid
+      description: REST surface for find-by-keyword-id-keywordId.
+      operations:
+      - method: GET
+        name: findbykeywordid
+        description: Find Service Points by keyword ID
+        call: dhl.findbykeywordid
+        with:
+          keywordId: rest.keywordId
+          countryCode: rest.countryCode
+          postalCode: rest.postalCode
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/find-by-location-id/{id}
+      name: find-by-location-id-id
+      description: REST surface for find-by-location-id-id.
+      operations:
+      - method: GET
+        name: findbylocationid
+        description: Find Service Point by location ID
+        call: dhl.findbylocationid
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: dhl-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for DHL Location Finder Unified API. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: find-service-points-address
+      description: Find Service Points by address
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: dhl.findbyaddress
+      with:
+        countryCode: tools.countryCode
+        postalCode: tools.postalCode
+        addressLocality: tools.addressLocality
+        streetAddress: tools.streetAddress
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: find-service-points-geographic-coordinates
+      description: Find Service Points by geographic coordinates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: dhl.findbygeo
+      with:
+        latitude: tools.latitude
+        longitude: tools.longitude
+        countryCode: tools.countryCode
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: find-service-points-keyword-id
+      description: Find Service Points by keyword ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: dhl.findbykeywordid
+      with:
+        keywordId: tools.keywordId
+        countryCode: tools.countryCode
+        postalCode: tools.postalCode
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: find-service-point-location-id
+      description: Find Service Point by location ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: dhl.findbylocationid
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
