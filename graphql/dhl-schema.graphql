@@ -1,0 +1,851 @@
+"""
+DHL Express GraphQL Schema
+Source: https://developer.dhl.com/
+Covers: DHL Unified API — shipment creation, tracking, rate quoting,
+pickup scheduling, label generation, and customs/clearance.
+"""
+
+# ─── Scalars ─────────────────────────────────────────────────────────────────
+
+scalar DateTime
+scalar Date
+scalar JSON
+
+# ─── Enums ───────────────────────────────────────────────────────────────────
+
+enum WeightUnit {
+  KG
+  LB
+}
+
+enum DimensionUnit {
+  CM
+  IN
+}
+
+enum LabelFormatType {
+  PDF
+  ZPL2
+  EPL2
+  LP2
+}
+
+enum ServiceTypeCode {
+  EXPRESS_WORLDWIDE
+  EXPRESS_12
+  EXPRESS_9
+  EXPRESS_ENVELOPE
+  ECONOMY_SELECT
+  MEDICAL_EXPRESS
+}
+
+enum PackagingTypeCode {
+  DHL_FLYER
+  DHL_JUNIOR_JUMBO_BOX
+  DHL_JUMBO_BOX
+  DHL_EXPRESS_ENVELOPE
+  YOUR_PACKAGING
+}
+
+enum DutiesPaymentType {
+  SHIPPER
+  RECIPIENT
+  THIRD_PARTY
+}
+
+enum PickupStatus {
+  BOOKED
+  CANCELLED
+  COMPLETED
+}
+
+enum ShipmentStatus {
+  CREATED
+  PICKED_UP
+  IN_TRANSIT
+  OUT_FOR_DELIVERY
+  DELIVERED
+  EXCEPTION
+  RETURNED
+}
+
+enum NotificationChannel {
+  EMAIL
+  SMS
+  WEBHOOK
+}
+
+# ─── Timestamp ────────────────────────────────────────────────────────────────
+
+"""A point-in-time with timezone context for a shipment event."""
+type Timestamp {
+  date: Date!
+  time: String!
+  timezone: String
+}
+
+# ─── Location ─────────────────────────────────────────────────────────────────
+
+"""A named geographic location, used in tracking events and service areas."""
+type Location {
+  name: String
+  address: Address
+  serviceArea: ServiceArea
+}
+
+"""Represents a DHL service area region."""
+type ServiceArea {
+  code: ServiceAreaCode
+  description: String
+  GMTOffset: String
+}
+
+"""Identifies a specific DHL service area by code."""
+type ServiceAreaCode {
+  facilityCode: String!
+  cityCode: String!
+  countryCode: String!
+}
+
+# ─── Address ─────────────────────────────────────────────────────────────────
+
+"""A postal address used for shipment origin, destination, or pickup."""
+type Address {
+  addressLine1: String
+  addressLine2: String
+  addressLine3: String
+  city: String!
+  postalCode: String
+  stateOrProvince: String
+  countryCode: String!
+}
+
+input AddressInput {
+  addressLine1: String
+  addressLine2: String
+  addressLine3: String
+  city: String!
+  postalCode: String
+  stateOrProvince: String
+  countryCode: String!
+}
+
+# ─── Contact / Party ─────────────────────────────────────────────────────────
+
+"""Contact details for the shipment shipper."""
+type ShipperContact {
+  companyName: String
+  personName: String
+  phoneNumber: String!
+  emailAddress: String
+}
+
+"""Contact details for the shipment recipient."""
+type RecipientContact {
+  companyName: String
+  personName: String
+  phoneNumber: String!
+  emailAddress: String
+}
+
+"""Full shipper information including address and contact."""
+type ShipperInfo {
+  contact: ShipperContact!
+  address: Address!
+}
+
+"""Full recipient information including address and contact."""
+type RecipientInfo {
+  contact: RecipientContact!
+  address: Address!
+}
+
+"""Aggregated customer details for a shipment."""
+type CustomerDetails {
+  shipper: ShipperInfo!
+  recipient: RecipientInfo!
+}
+
+input ShipperContactInput {
+  companyName: String
+  personName: String
+  phoneNumber: String!
+  emailAddress: String
+}
+
+input RecipientContactInput {
+  companyName: String
+  personName: String
+  phoneNumber: String!
+  emailAddress: String
+}
+
+input ShipperInfoInput {
+  contact: ShipperContactInput!
+  address: AddressInput!
+}
+
+input RecipientInfoInput {
+  contact: RecipientContactInput!
+  address: AddressInput!
+}
+
+# ─── Account ─────────────────────────────────────────────────────────────────
+
+"""DHL account used for billing and service access."""
+type Account {
+  number: String!
+  type: String
+  details: AccountDetails
+}
+
+"""Detailed metadata about a DHL account."""
+type AccountDetails {
+  accountNumber: String!
+  customerName: String
+  billingAddress: Address
+  currency: String
+  creditLimit: Float
+}
+
+# ─── Weight & Dimension ──────────────────────────────────────────────────────
+
+"""Weight of a piece or package."""
+type Weight {
+  value: Float!
+  unit: WeightUnit!
+}
+
+"""Dimensional measurements of a piece or package."""
+type Dimension {
+  length: Float!
+  width: Float!
+  height: Float!
+  unit: DimensionUnit!
+}
+
+input WeightInput {
+  value: Float!
+  unit: WeightUnit!
+}
+
+input DimensionInput {
+  length: Float!
+  width: Float!
+  height: Float!
+  unit: DimensionUnit!
+}
+
+# ─── Piece / Package ─────────────────────────────────────────────────────────
+
+"""Detailed attributes of an individual piece in a shipment."""
+type PieceDetails {
+  pieceNumber: Int
+  weight: Weight
+  dimensions: Dimension
+  description: String
+  referenceNumber: String
+}
+
+"""A single piece (parcel unit) within a shipment."""
+type Piece {
+  number: Int!
+  trackingNumber: String
+  details: PieceDetails
+}
+
+"""Packaging type used for a shipment."""
+type PackagingType {
+  code: PackagingTypeCode!
+  description: String
+}
+
+"""A package in a shipment, combining packaging type, weight, and dimensions."""
+type Package {
+  packagingType: PackagingType
+  weight: Weight!
+  dimensions: Dimension
+  pieces: [Piece]
+}
+
+input PackageInput {
+  packagingTypeCode: PackagingTypeCode
+  weight: WeightInput!
+  dimensions: DimensionInput
+  numberOfPieces: Int
+}
+
+# ─── Content ─────────────────────────────────────────────────────────────────
+
+"""Description of the contents of a shipment, used for customs and invoicing."""
+type Content {
+  description: String!
+  quantity: Int
+  unitValue: Float
+  currency: String
+  countryOfOrigin: String
+  exportReason: String
+}
+
+input ContentInput {
+  description: String!
+  quantity: Int
+  unitValue: Float
+  currency: String
+  countryOfOrigin: String
+  exportReason: String
+}
+
+# ─── Product ─────────────────────────────────────────────────────────────────
+
+"""Human-readable name of a DHL shipping product."""
+type ProductName {
+  en: String
+  local: String
+}
+
+"""Code identifying a specific DHL product."""
+type ProductCode {
+  global: String!
+  local: String
+}
+
+"""A DHL shipping product with its associated services."""
+type Product {
+  code: ProductCode!
+  name: ProductName
+  deliveryCapabilities: DeliveryCapabilities
+  services: [Service]
+}
+
+"""Delivery capability details for a product."""
+type DeliveryCapabilities {
+  deliveryTypeCode: String
+  estimatedDeliveryDateAndTime: DateTime
+  destinationServiceAreaCode: String
+  originServiceAreaCode: String
+  pickupCapabilities: PickupCapabilities
+}
+
+"""Pickup capability information for a product."""
+type PickupCapabilities {
+  nextBusinessDay: Boolean
+  localCutoffDateAndTime: DateTime
+  GMTCutoffTime: String
+}
+
+# ─── Service ─────────────────────────────────────────────────────────────────
+
+"""Type classification for a DHL service."""
+type ServiceType {
+  code: ServiceTypeCode!
+  description: String
+}
+
+"""An optional or value-added service attachable to a shipment."""
+type Service {
+  code: String!
+  name: String
+  type: ServiceType
+  price: Float
+  currency: String
+}
+
+"""A special handling service applied to a shipment (e.g., signature, insurance)."""
+type SpecialService {
+  code: String!
+  description: String
+  value: Float
+  currency: String
+}
+
+input SpecialServiceInput {
+  code: String!
+  value: Float
+  currency: String
+}
+
+# ─── Label ───────────────────────────────────────────────────────────────────
+
+"""Format specification for a generated shipping label."""
+type LabelFormat {
+  type: LabelFormatType!
+  templateName: String
+}
+
+"""A generated shipping label with encoded content."""
+type Label {
+  format: LabelFormat
+  content: String
+  trackingNumber: String
+}
+
+# ─── Waybill Document ────────────────────────────────────────────────────────
+
+"""An air waybill or shipment document generated by DHL."""
+type WaybillDocument {
+  content: String
+  format: String
+  typeCode: String
+}
+
+# ─── Tracking ────────────────────────────────────────────────────────────────
+
+"""An alphanumeric tracking number assigned to a DHL shipment or piece."""
+type TrackingNumber {
+  value: String!
+  shipmentId: String
+}
+
+"""A single event in the lifecycle of a tracked shipment."""
+type TrackingEvent {
+  timestamp: Timestamp!
+  location: Location
+  description: String!
+  code: String
+  nextSteps: String
+}
+
+"""Full tracking record for a DHL shipment."""
+type ShipmentTracking {
+  id: String!
+  trackingNumber: TrackingNumber!
+  status: ShipmentStatus!
+  events: [TrackingEvent!]!
+  estimatedDelivery: DateTime
+  pieces: [Piece]
+}
+
+# ─── Shipment ────────────────────────────────────────────────────────────────
+
+"""A complete DHL shipment record."""
+type Shipment {
+  id: String!
+  trackingNumber: TrackingNumber!
+  status: ShipmentStatus!
+  customerDetails: CustomerDetails!
+  product: Product
+  packages: [Package!]!
+  content: Content
+  specialServices: [SpecialService]
+  label: Label
+  waybillDocument: WaybillDocument
+  invoice: Invoice
+  clearanceData: ClearanceData
+  createdAt: DateTime!
+  updatedAt: DateTime
+}
+
+"""Input payload for creating a new DHL Express shipment."""
+input ShipmentRequestInput {
+  plannedShippingDateAndTime: DateTime!
+  pickup: PickupRequestInput
+  productCode: String!
+  localProductCode: String
+  getRateEstimates: Boolean
+  accounts: [AccountInput!]!
+  customerDetails: CustomerDetailsInput!
+  content: ContentInput!
+  packages: [PackageInput!]!
+  specialServices: [SpecialServiceInput]
+  outputImageProperties: OutputImagePropertiesInput
+  exportDeclaration: ExportInfoInput
+  valueAddedServices: [SpecialServiceInput]
+}
+
+input CustomerDetailsInput {
+  shipperDetails: ShipperInfoInput!
+  receiverDetails: RecipientInfoInput!
+}
+
+input AccountInput {
+  typeCode: String!
+  number: String!
+}
+
+input OutputImagePropertiesInput {
+  printerDPI: Int
+  customerLogo: String
+  encodingFormat: LabelFormatType
+  imageOptions: [ImageOptionInput]
+}
+
+input ImageOptionInput {
+  typeCode: String
+  templateName: String
+  isRequested: Boolean
+}
+
+"""The request object for creating a shipment (wraps ShipmentRequestInput)."""
+type ShipmentRequest {
+  id: String
+  plannedShippingDateAndTime: DateTime
+  productCode: String
+  customerDetails: CustomerDetails
+  content: Content
+  packages: [Package]
+}
+
+"""The response returned after a shipment is successfully created."""
+type ShipmentResponse {
+  shipmentTrackingNumber: String!
+  cancelPickupUrl: String
+  trackingUrl: String
+  label: Label
+  documents: [WaybillDocument]
+  packages: [Package]
+}
+
+# ─── Rate ────────────────────────────────────────────────────────────────────
+
+"""A rate quote request submitted to DHL."""
+type RateRequest {
+  id: String
+  originCountryCode: String
+  destinationCountryCode: String
+  weight: Weight
+  dimensions: Dimension
+  plannedShippingDate: Date
+}
+
+input RateRequestInput {
+  originCountryCode: String!
+  originCityName: String!
+  destinationCountryCode: String!
+  destinationCityName: String!
+  weight: WeightInput!
+  length: Float!
+  width: Float!
+  height: Float!
+  plannedShippingDate: Date!
+  isCustomsDeclarable: Boolean
+  unitOfMeasurement: String
+  accounts: [AccountInput]
+}
+
+"""A surcharge applied on top of the base rate."""
+type Surcharge {
+  name: String!
+  price: Float!
+  currency: String!
+  typeCode: String
+}
+
+"""A rate quote for a specific DHL product."""
+type Rate {
+  productName: String!
+  productCode: String!
+  localProductCode: String
+  localProductCountryCode: String
+  networkTypeCode: String
+  currency: String!
+  baseCharge: Float!
+  totalCharge: Float!
+  surcharges: [Surcharge]
+  deliveryCapabilities: DeliveryCapabilities
+  breakdown: [RateBreakdownItem]
+}
+
+"""A line item in the rate breakdown."""
+type RateBreakdownItem {
+  name: String!
+  price: Float!
+  currency: String!
+  typeCode: String
+}
+
+"""The response from a rate quote request, listing available products and rates."""
+type RateResponse {
+  products: [Rate!]!
+}
+
+# ─── Pickup ──────────────────────────────────────────────────────────────────
+
+"""Address used specifically for pickup scheduling."""
+type PickupAddress {
+  address: Address!
+  contact: ShipperContact!
+  specialInstructions: String
+}
+
+"""Requested pickup time window."""
+type PickupTime {
+  ready: DateTime!
+  close: DateTime!
+}
+
+"""Full pickup request details."""
+type PickupDetails {
+  typeCode: String
+  accounts: [Account]
+  specialInstructions: String
+  remark: String
+  address: PickupAddress
+  location: String
+  time: PickupTime
+  packages: [Package]
+}
+
+"""Input for requesting a DHL Express pickup."""
+input PickupRequestInput {
+  isRequested: Boolean!
+  closeTime: String
+  location: String
+  specialInstructions: [SpecialInstructionInput]
+}
+
+input SpecialInstructionInput {
+  value: String!
+  typeCode: String
+}
+
+"""A pickup request record."""
+type PickupRequest {
+  id: String
+  details: PickupDetails
+  status: PickupStatus
+}
+
+"""Confirmation returned after a pickup is successfully booked."""
+type PickupConfirmation {
+  dispatchConfirmationNumber: String!
+  readyByTime: DateTime
+  nextPickupDate: Date
+}
+
+# ─── Invoice / Customs ───────────────────────────────────────────────────────
+
+"""A commercial invoice attached to a cross-border shipment."""
+type CommercialInvoice {
+  number: String
+  date: Date
+  totalValue: Float
+  currency: String
+  terms: String
+  remarks: String
+  commodities: [Commodity]
+}
+
+"""A harmonized tariff code used for customs classification."""
+type HarmonizCode {
+  value: String!
+  description: String
+}
+
+"""A single commodity line in a customs declaration."""
+type Commodity {
+  description: String!
+  quantity: Int!
+  unitValue: Float!
+  currency: String!
+  weight: Weight
+  harmonizCode: HarmonizCode
+  countryOfOrigin: String
+}
+
+"""Export declaration data for a cross-border shipment."""
+type ExportInfo {
+  exportReason: String
+  exportReasonCode: String
+  shipmentType: String
+  customsDocuments: [CustomsDocument]
+  invoice: CommercialInvoice
+  commodities: [Commodity]
+}
+
+input ExportInfoInput {
+  exportReason: String
+  exportReasonCode: String
+  shipmentType: String
+  invoiceDate: Date
+  invoiceNumber: String
+  commodities: [CommodityInput]
+}
+
+input CommodityInput {
+  description: String!
+  quantity: Int!
+  unitPrice: Float!
+  currency: String!
+  weight: WeightInput
+  hsCode: String
+  countryOfOrigin: String
+}
+
+"""A customs document (e.g., commercial invoice, packing list)."""
+type CustomsDocument {
+  typeCode: String
+  value: String
+}
+
+"""Import-side clearance information."""
+type ImportInfo {
+  importerOfRecord: String
+  importerVATNumber: String
+  importerTaxId: String
+  dutiableFlag: Boolean
+}
+
+"""Clearance data bundle attached to a shipment."""
+type ClearanceData {
+  exportDeclaration: ExportInfo
+  importInfo: ImportInfo
+  dutiableFlag: Boolean
+  commodityCode: String
+}
+
+"""Duty and tax amounts applicable to a cross-border shipment."""
+type Duties {
+  amount: Float!
+  currency: String!
+  paymentType: DutiesPaymentType!
+  payment: DutiesPayment
+}
+
+"""Payment details for duties and taxes."""
+type DutiesPayment {
+  accountNumber: String
+  method: String
+}
+
+"""An invoice associated with a shipment (may be commercial or proforma)."""
+type Invoice {
+  number: String
+  date: Date
+  totalValue: Float
+  currency: String
+  commercialInvoice: CommercialInvoice
+}
+
+# ─── Insurance ───────────────────────────────────────────────────────────────
+
+"""Insurance coverage applied to a shipment."""
+type Insurance {
+  value: InsuredAmount!
+  content: String
+}
+
+"""The monetary value of an insured shipment."""
+type InsuredAmount {
+  amount: Float!
+  currency: String!
+}
+
+# ─── Dangerous Goods ─────────────────────────────────────────────────────────
+
+"""Dangerous goods declaration for a shipment."""
+type DangerousGoods {
+  contentId: String
+  dryIceTotalNetWeight: Float
+  unCode: String
+  handlingInformation: String
+  innerPackaging: InnerPackaging
+}
+
+"""Inner packaging detail for dangerous goods."""
+type InnerPackaging {
+  quantity: Int
+  weight: Float
+  description: String
+}
+
+# ─── Notifications ───────────────────────────────────────────────────────────
+
+"""A notification subscription request for shipment status updates."""
+type NotificationRequest {
+  trackingNumber: String!
+  channel: NotificationChannel!
+  address: String!
+  language: String
+  events: [String]
+}
+
+"""A webhook endpoint registered to receive DHL event notifications."""
+type Webhook {
+  id: String!
+  url: String!
+  events: [String!]!
+  secret: String
+  active: Boolean!
+  createdAt: DateTime
+}
+
+input WebhookInput {
+  url: String!
+  events: [String!]!
+  secret: String
+}
+
+# ─── Auth ────────────────────────────────────────────────────────────────────
+
+"""An API key used to authenticate against DHL APIs."""
+type APIKey {
+  key: String!
+  name: String
+  createdAt: DateTime
+  expiresAt: DateTime
+  scopes: [String]
+}
+
+"""An OAuth or session token used for authenticated requests."""
+type Token {
+  accessToken: String!
+  tokenType: String!
+  expiresIn: Int!
+  scope: String
+}
+
+# ─── Root Types ──────────────────────────────────────────────────────────────
+
+type Query {
+  """Track a shipment by its waybill or tracking number."""
+  trackShipment(trackingNumber: String!): ShipmentTracking
+
+  """Track multiple shipments by a list of tracking numbers."""
+  trackShipments(trackingNumbers: [String!]!): [ShipmentTracking!]!
+
+  """Get rate quotes for a potential shipment."""
+  getRates(request: RateRequestInput!): RateResponse
+
+  """Retrieve a shipment record by its DHL shipment ID."""
+  getShipment(shipmentId: String!): Shipment
+
+  """List available products for a given origin and destination."""
+  getProducts(
+    originCountryCode: String!
+    destinationCountryCode: String!
+    weight: WeightInput!
+  ): [Product!]!
+
+  """Get account details for an authenticated DHL account number."""
+  getAccount(accountNumber: String!): AccountDetails
+
+  """List webhooks registered for the authenticated user."""
+  listWebhooks: [Webhook!]!
+}
+
+type Mutation {
+  """Create a new DHL Express shipment and receive a label."""
+  createShipment(request: ShipmentRequestInput!): ShipmentResponse!
+
+  """Schedule a pickup for an existing shipment."""
+  schedulePickup(
+    plannedPickupDateAndTime: DateTime!
+    accounts: [AccountInput!]!
+    customerDetails: CustomerDetailsInput!
+    packages: [PackageInput!]!
+    specialInstructions: [SpecialInstructionInput]
+  ): PickupConfirmation!
+
+  """Cancel a previously scheduled pickup."""
+  cancelPickup(dispatchConfirmationNumber: String!, reason: String): Boolean!
+
+  """Register a webhook for shipment event notifications."""
+  registerWebhook(webhook: WebhookInput!): Webhook!
+
+  """Delete a registered webhook."""
+  deleteWebhook(webhookId: String!): Boolean!
+
+  """Generate an authentication token using API credentials."""
+  authenticate(apiKey: String!, apiSecret: String!): Token!
+}
