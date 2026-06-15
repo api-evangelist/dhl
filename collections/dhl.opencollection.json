@@ -1,0 +1,185 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "DHL Location Finder Unified API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "DHL-API-Key",
+      "value": "{{DHL-API-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Find Service Points by address",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.dhl.com/location-finder/v1/find-by-address",
+        "params": [
+          {
+            "name": "countryCode",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "postalCode",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "addressLocality",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "streetAddress",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "providerType",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "serviceType",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "locationType",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "radius",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "hideClosedShops",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Find Service Points by address"
+    },
+    {
+      "info": {
+        "name": "Find Service Points by geographic coordinates",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.dhl.com/location-finder/v1/find-by-geo",
+        "params": [
+          {
+            "name": "latitude",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "longitude",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "providerType",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "serviceType",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "locationType",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "radius",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "hideClosedShops",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "countryCode",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Find Service Points by geographic coordinates"
+    },
+    {
+      "info": {
+        "name": "Find Service Point by location ID",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.dhl.com/location-finder/v1/find-by-location-id/:id",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Find Service Point by location ID"
+    },
+    {
+      "info": {
+        "name": "Find Service Points by keyword ID",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.dhl.com/location-finder/v1/find-by-keyword-id/:keywordId",
+        "params": [
+          {
+            "name": "keywordId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "countryCode",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "postalCode",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Find Service Points by keyword ID"
+    }
+  ],
+  "bundled": true
+}
