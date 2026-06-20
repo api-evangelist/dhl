@@ -8,7 +8,7 @@ description: DHL is a global logistics company that provides a wide range of ser
   with seamless and reliable shipping solutions. The DHL API Developer Portal exposes
   APIs across the company's business divisions including DHL eCommerce, DHL Express,
   DHL Global Forwarding, DHL Freight, DHL Supply Chain, and Post and Parcel Germany.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 type: Index
 position: Consumer
 access: 3rd-Party
