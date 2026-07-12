@@ -557,6 +557,10 @@ apis:
   description: Track single or multiple packages and manifest shipments handled by
     DHL eCommerce Americas.
 common:
+- type: DomainSecurity
+  url: security/dhl-domain-security.yml
+- type: Authentication
+  url: authentication/dhl-authentication.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/dhl
 - type: Documentation
