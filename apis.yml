@@ -557,6 +557,8 @@ apis:
   description: Track single or multiple packages and manifest shipments handled by
     DHL eCommerce Americas.
 common:
+- type: AgenticAccess
+  url: agentic-access/dhl-agentic-access.yml
 - type: DomainSecurity
   url: security/dhl-domain-security.yml
 - type: Authentication
