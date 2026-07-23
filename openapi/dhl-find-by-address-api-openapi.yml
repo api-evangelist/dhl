@@ -1,0 +1,124 @@
+openapi: 3.1.0
+info:
+  title: DHL Location Finder Unified Find By Address API
+  description: The DHL Location Finder Unified API provides search of DHL Service Points across DHL divisions by address, geographic coordinates, location ID, and keyword ID.
+  version: '1'
+servers:
+- url: https://api.dhl.com/location-finder/v1
+  description: DHL Location Finder Unified API
+security:
+- apiKey: []
+tags:
+- name: Find By Address
+paths:
+  /find-by-address:
+    get:
+      summary: Find Service Points by address
+      operationId: findByAddress
+      parameters:
+      - name: countryCode
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: postalCode
+        in: query
+        schema:
+          type: string
+      - name: addressLocality
+        in: query
+        schema:
+          type: string
+      - name: streetAddress
+        in: query
+        schema:
+          type: string
+      - $ref: '#/components/parameters/ProviderType'
+      - $ref: '#/components/parameters/ServiceType'
+      - $ref: '#/components/parameters/LocationType'
+      - $ref: '#/components/parameters/Radius'
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/HideClosedShops'
+      responses:
+        '200':
+          description: Service Point list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServicePointList'
+      tags:
+      - Find By Address
+components:
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+    ProviderType:
+      name: providerType
+      in: query
+      schema:
+        type: string
+        enum:
+        - parcel
+        - express
+    ServiceType:
+      name: serviceType
+      in: query
+      schema:
+        type: string
+    Radius:
+      name: radius
+      in: query
+      schema:
+        type: integer
+        default: 5000
+    HideClosedShops:
+      name: hideClosedShops
+      in: query
+      schema:
+        type: boolean
+    LocationType:
+      name: locationType
+      in: query
+      schema:
+        type: string
+        enum:
+        - servicepoint
+        - postoffice
+        - locker
+        - pobox
+        - postbox
+  schemas:
+    ServicePoint:
+      type: object
+      additionalProperties: true
+      properties:
+        url:
+          type: string
+        location:
+          type: object
+          additionalProperties: true
+        name:
+          type: string
+        place:
+          type: object
+          additionalProperties: true
+    ServicePointList:
+      type: object
+      additionalProperties: true
+      properties:
+        url:
+          type: string
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ServicePoint'
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: DHL-API-Key
+x-generated-from: https://developer.dhl.com/api-reference/location-finder-unified
+x-generated-by: claude-crawl-2026-05-08
