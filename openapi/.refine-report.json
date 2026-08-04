@@ -1,0 +1,20 @@
+{
+  "provider": "dhl",
+  "sources": [
+    "dhl-find-by-address-api-openapi.yml",
+    "dhl-find-by-geo-api-openapi.yml",
+    "dhl-find-by-keyword-id-api-openapi.yml",
+    "dhl-find-by-location-id-api-openapi.yml"
+  ],
+  "outputs": [
+    "dhl-find-by-address-api-openapi.yml",
+    "dhl-find-by-geo-api-openapi.yml",
+    "dhl-find-by-keyword-id-api-openapi.yml",
+    "dhl-find-by-location-id-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
