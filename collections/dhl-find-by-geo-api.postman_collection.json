@@ -1,0 +1,209 @@
+{
+  "item": [
+    {
+      "id": "cf0354b5-a0c7-4d08-a083-83f012fdcc26",
+      "name": "Find By Geo",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f121f3ca-cfa1-491e-80cf-a7a97ff81579",
+          "name": "Find Service Points by geographic coordinates",
+          "request": {
+            "name": "Find Service Points by geographic coordinates",
+            "description": {},
+            "url": {
+              "path": [
+                "find-by-geo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "latitude",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "longitude",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "providerType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "serviceType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "locationType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "radius",
+                  "value": "5000"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hideClosedShops",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "countryCode",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b224900-631c-4b84-8117-01052db7c183",
+              "name": "Service Point list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "find-by-geo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "latitude",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "longitude",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "providerType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "serviceType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locationType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "radius",
+                      "value": "5000"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "hideClosedShops",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "countryCode",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "DHL-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"url\": \"string\",\n  \"locations\": [\n    {\n      \"url\": \"string\",\n      \"location\": {\n        \"key_0\": 8265.945875075524,\n        \"key_1\": 9327,\n        \"key_2\": 5153,\n        \"key_3\": false\n      },\n      \"name\": \"string\",\n      \"place\": {\n        \"key_0\": 9691,\n        \"key_1\": true\n      }\n    },\n    {\n      \"url\": \"string\",\n      \"location\": {\n        \"key_0\": \"string\"\n      },\n      \"name\": \"string\",\n      \"place\": {\n        \"key_0\": false,\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"key_0\": 8037,\n  \"key_1\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dhl.com/location-finder/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "DHL-API-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "06e2c224-d10a-47e0-b10d-e29da3302372",
+    "name": "DHL Location Finder Unified Find By Address Find By Geo API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The DHL Location Finder Unified API provides search of DHL Service Points across DHL divisions by address, geographic coordinates, location ID, and keyword ID.",
+      "type": "text/plain"
+    }
+  }
+}

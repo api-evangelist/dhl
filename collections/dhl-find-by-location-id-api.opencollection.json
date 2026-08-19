@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "DHL Location Finder Unified Find By Address Find By Location Id API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "DHL-API-Key",
+      "value": "{{DHL-API-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Find By Location Id",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Find Service Point by location ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dhl.com/location-finder/v1/find-by-location-id/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Find Service Point by location ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,142 @@
+{
+  "item": [
+    {
+      "id": "ce50a591-9c75-4365-873d-bb9b1cd7030f",
+      "name": "Find By Location Id",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ce08c60c-86b5-47bc-a3b6-107f62d3ba96",
+          "name": "Find Service Point by location ID",
+          "request": {
+            "name": "Find Service Point by location ID",
+            "description": {},
+            "url": {
+              "path": [
+                "find-by-location-id",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "39d5dbc8-ef19-455a-b80d-b2d8fcbdb13f",
+              "name": "Service Point detail",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "find-by-location-id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "DHL-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"url\": \"string\",\n  \"location\": {\n    \"key_0\": 1602.7830573382807,\n    \"key_1\": 2425.1318625921604,\n    \"key_2\": 2621\n  },\n  \"name\": \"string\",\n  \"place\": {\n    \"key_0\": 5309.023746192287,\n    \"key_1\": 855,\n    \"key_2\": true\n  },\n  \"key_0\": 3195,\n  \"key_1\": 4424.216445879493\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dhl.com/location-finder/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "DHL-API-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "30587e04-443e-4bf8-bd83-180e94b96ca1",
+    "name": "DHL Location Finder Unified Find By Address Find By Location Id API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The DHL Location Finder Unified API provides search of DHL Service Points across DHL divisions by address, geographic coordinates, location ID, and keyword ID.",
+      "type": "text/plain"
+    }
+  }
+}

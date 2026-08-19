@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "DHL Location Finder Unified Find By Address Find By Geo API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "DHL-API-Key",
+      "value": "{{DHL-API-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Find By Geo",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Find Service Points by geographic coordinates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dhl.com/location-finder/v1/find-by-geo",
+            "params": [
+              {
+                "name": "latitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "longitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "providerType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "serviceType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "locationType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "radius",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hideClosedShops",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "countryCode",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Find Service Points by geographic coordinates"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
