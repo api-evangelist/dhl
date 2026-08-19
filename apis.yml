@@ -33,7 +33,7 @@ tags:
 - Tracking
 created: '2025-03-01'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: dhl:shipment-tracking-unified
   name: Shipment Tracking Unified
