@@ -29,6 +29,12 @@ tags:
 - Freight
 - Logistics
 - Shipping
+- E-Commerce
+- Tracking
+tags_raw:
+- Freight
+- Logistics
+- Shipping
 - eCommerce
 - Tracking
 created: '2025-03-01'
@@ -63,6 +69,9 @@ apis:
   name: User Guide DHL eCommerce Americas
   humanURL: https://developer.dhl.com/api-reference/user-guide-dhl-ecommerce-americas
   tags:
+  - E-Commerce
+  - Americas
+  tags_raw:
   - eCommerce
   - Americas
   properties:
@@ -87,6 +96,9 @@ apis:
   name: Authentication DHL eCommerce Americas
   humanURL: https://developer.dhl.com/api-reference/authentication-dhl-ecommerce-americas
   tags:
+  - Authentication
+  - E-Commerce
+  tags_raw:
   - Authentication
   - eCommerce
   properties:
@@ -119,6 +131,9 @@ apis:
   name: Changelog DHL eCommerce Americas
   humanURL: https://developer.dhl.com/api-reference/changelog-dhl-ecommerce-americas
   tags:
+  - Changelog
+  - E-Commerce
+  tags_raw:
   - Changelog
   - eCommerce
   properties:
@@ -179,6 +194,9 @@ apis:
   humanURL: >-
     https://developer.dhl.com/api-reference/deutsche-post-order-management-am-post-parcel-germany
   tags:
+  - Order
+  - Germany
+  tags_raw:
   - Orders
   - Germany
   properties:
@@ -216,6 +234,9 @@ apis:
   name: DHL eCommerce Europe eConnect
   humanURL: https://developer.dhl.com/api-reference/ecommerce-europe
   tags:
+  - E-Commerce
+  - Europe
+  tags_raw:
   - eCommerce
   - Europe
   properties:
@@ -228,6 +249,9 @@ apis:
   name: DHL eCommerce Europe eConnect Beta
   humanURL: https://developer.dhl.com/api-reference/dhl-ecommerce-europe-econnect-beta
   tags:
+  - E-Commerce
+  - Beta
+  tags_raw:
   - eCommerce
   - Beta
   properties:
@@ -346,6 +370,9 @@ apis:
   name: DHL eCommerce UK
   humanURL: https://developer.dhl.com/api-reference/ecommerce-uk
   tags:
+  - E-Commerce
+  - United Kingdom
+  tags_raw:
   - eCommerce
   - United Kingdom
   properties:
@@ -404,6 +431,9 @@ apis:
   name: Product DHL Freight
   humanURL: https://developer.dhl.com/api-reference/product-dhl-freight
   tags:
+  - Product
+  - Freight
+  tags_raw:
   - Products
   - Freight
   properties:
@@ -416,6 +446,9 @@ apis:
   humanURL: >-
     https://developer.dhl.com/api-reference/product-and-sub-product-pickup-detail-dhl-ecommerce-india-blue-dart
   tags:
+  - Product
+  - India
+  tags_raw:
   - Products
   - India
   properties:
@@ -428,6 +461,9 @@ apis:
   name: Product Finder DHL eCommerce Americas
   humanURL: https://developer.dhl.com/api-reference/product-finder-dhl-ecommerce-americas
   tags:
+  - Product
+  - Americas
+  tags_raw:
   - Products
   - Americas
   properties:
@@ -439,6 +475,9 @@ apis:
   name: Products API Post Parcel Germany
   humanURL: https://developer.dhl.com/api-reference/products-api-post-parcel-germany
   tags:
+  - Product
+  - Germany
+  tags_raw:
   - Products
   - Germany
   properties:
@@ -461,6 +500,9 @@ apis:
   name: References DHL eCommerce Americas
   humanURL: https://developer.dhl.com/api-reference/references-dhl-ecommerce-americas
   tags:
+  - Reference
+  - E-Commerce
+  tags_raw:
   - Reference
   - eCommerce
   properties:
