@@ -1,10 +1,7 @@
 {
   "provider": "dhl",
   "sources": [
-    "dhl-find-by-address-api-openapi.yml",
-    "dhl-find-by-geo-api-openapi.yml",
-    "dhl-find-by-keyword-id-api-openapi.yml",
-    "dhl-find-by-location-id-api-openapi.yml"
+    "_ae-authored/dhl-openapi.yml"
   ],
   "outputs": [
     "dhl-find-by-address-api-openapi.yml",
@@ -15,6 +12,23 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "dhl-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "dhl-openapi.yml: tagged paths GET /find-by-address -> Find By Address",
+    "dhl-openapi.yml: tagged paths GET /find-by-geo -> Find By Geo",
+    "dhl-openapi.yml: tagged paths GET /find-by-location-id/{id} -> Find By Location Id",
+    "dhl-openapi.yml: tagged paths GET /find-by-keyword-id/{keywordId} -> Find By Keyword Id",
+    "dhl-openapi.yml: declared missing tag: Find By Address",
+    "dhl-openapi.yml: declared missing tag: Find By Geo",
+    "dhl-openapi.yml: declared missing tag: Find By Keyword Id",
+    "dhl-openapi.yml: declared missing tag: Find By Location Id",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "dhl-find-by-address-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "dhl-find-by-geo-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "dhl-find-by-keyword-id-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "dhl-find-by-location-id-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
