@@ -599,8 +599,6 @@ apis:
     url: openapi/dhl-find-by-address-api-openapi.yml
   - type: Documentation
     url: https://developer.dhl.com/api-reference/location-finder-unified
-  - type: GraphQL
-    url: graphql/dhl-graphql.md
 - aid: dhl:dhl-find-by-geo-api
   name: DHL Find By Geo API
   description: The Find By Geo API from DHL — 1 operation(s) for find by geo.
@@ -612,8 +610,6 @@ apis:
     url: openapi/dhl-find-by-geo-api-openapi.yml
   - type: Documentation
     url: https://developer.dhl.com/api-reference/location-finder-unified
-  - type: GraphQL
-    url: graphql/dhl-graphql.md
 - aid: dhl:dhl-find-by-keyword-id-api
   name: DHL Find By Keyword Id API
   description: The Find By Keyword Id API from DHL — 1 operation(s) for find by keyword id.
@@ -625,8 +621,6 @@ apis:
     url: openapi/dhl-find-by-keyword-id-api-openapi.yml
   - type: Documentation
     url: https://developer.dhl.com/api-reference/location-finder-unified
-  - type: GraphQL
-    url: graphql/dhl-graphql.md
 - aid: dhl:dhl-find-by-location-id-api
   name: DHL Find By Location Id API
   description: The Find By Location Id API from DHL — 1 operation(s) for find by location id.
@@ -638,8 +632,6 @@ apis:
     url: openapi/dhl-find-by-location-id-api-openapi.yml
   - type: Documentation
     url: https://developer.dhl.com/api-reference/location-finder-unified
-  - type: GraphQL
-    url: graphql/dhl-graphql.md
 common:
 - type: Website
   url: https://dhl.com
