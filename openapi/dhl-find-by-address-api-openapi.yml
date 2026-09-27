@@ -50,17 +50,6 @@ paths:
       - Find By Address
 components:
   parameters:
-    Limit:
-      name: limit
-      in: query
-      schema:
-        type: integer
-    Radius:
-      name: radius
-      in: query
-      schema:
-        type: integer
-        default: 5000
     ServiceType:
       name: serviceType
       in: query
@@ -77,6 +66,12 @@ components:
         - locker
         - pobox
         - postbox
+    Radius:
+      name: radius
+      in: query
+      schema:
+        type: integer
+        default: 5000
     HideClosedShops:
       name: hideClosedShops
       in: query
@@ -90,6 +85,11 @@ components:
         enum:
         - parcel
         - express
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
   schemas:
     ServicePointList:
       type: object
