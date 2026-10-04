@@ -49,6 +49,16 @@ paths:
       - Find By Geo
 components:
   parameters:
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+    HideClosedShops:
+      name: hideClosedShops
+      in: query
+      schema:
+        type: boolean
     LocationType:
       name: locationType
       in: query
@@ -60,16 +70,14 @@ components:
         - locker
         - pobox
         - postbox
-    Limit:
-      name: limit
+    ProviderType:
+      name: providerType
       in: query
       schema:
-        type: integer
-    HideClosedShops:
-      name: hideClosedShops
-      in: query
-      schema:
-        type: boolean
+        type: string
+        enum:
+        - parcel
+        - express
     ServiceType:
       name: serviceType
       in: query
@@ -81,14 +89,6 @@ components:
       schema:
         type: integer
         default: 5000
-    ProviderType:
-      name: providerType
-      in: query
-      schema:
-        type: string
-        enum:
-        - parcel
-        - express
   schemas:
     ServicePoint:
       type: object
