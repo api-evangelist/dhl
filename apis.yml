@@ -633,6 +633,12 @@ apis:
   - type: Documentation
     url: https://developer.dhl.com/api-reference/location-finder-unified
 common:
+- type: Plans
+  url: plans/dhl-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/dhl-rate-limits.yml
+- type: FinOps
+  url: finops/dhl-finops.yml
 - type: Website
   url: https://dhl.com
 - type: AgenticAccess
