@@ -21,3 +21,69 @@
     detected: '2026-10-12'
   status: not-a-workflow
   arazzo: null
+- slug: dhl-shippo
+  label: shippo
+  partner: shippo
+  partner_name: shippo
+  type: contract
+  channel: partner-built
+  evidence: https://docs.goshippo.com/spec/shippoapi/public-api.yaml
+  source: edge
+  relationship: carrier-coverage
+  contract_reference:
+    repo: shippo
+    spec_file: public-api.yaml
+    value: dhl_benelux
+    property: components.schemas.CarriersEnum
+    detected_by: detect-carrier-edges.py
+    detected: '2026-10-12'
+    spec_url: https://docs.goshippo.com/spec/shippoapi/public-api.yaml
+  status: pending-generation
+  arazzo: null
+- slug: dhl-karrio
+  label: karrio
+  partner: karrio
+  partner_name: karrio
+  type: contract
+  channel: partner-built
+  evidence: https://github.com/api-evangelist/karrio/blob/main/openapi/karrio-batches-api-openapi.yml
+  source: edge
+  relationship: carrier-coverage
+  contract_reference:
+    repo: karrio
+    spec_file: karrio-batches-api-openapi.yml
+    value: dhl_express
+    property: schemas.TrackingData.carrier_name
+    detected_by: detect-carrier-edges.py
+    detected: '2026-10-12'
+  status: pending-generation
+  arazzo: null
+- slug: dhl-shipcloud
+  label: shipcloud
+  partner: shipcloud
+  partner_name: shipcloud
+  type: contract
+  channel: partner-built
+  evidence: https://github.com/api-evangelist/shipcloud/blob/main/openapi/shipcloud-carriers-api-openapi.yml
+  source: edge
+  relationship: carrier-coverage
+  contract_reference:
+    repo: shipcloud
+    spec_file: shipcloud-carriers-api-openapi.yml
+    value: dhl
+    property: components.schemas.carrier_shipping
+    detected_by: detect-carrier-edges.py
+    detected: '2026-10-12'
+  status: pending-generation
+  arazzo: null
+- slug: dhl-17track
+  label: 17track
+  partner: 17track
+  partner_name: 17track
+  type: contract
+  channel: partner-built
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  source: edge
+  relationship: carrier-coverage
+  status: pending-generation
+  arazzo: null
