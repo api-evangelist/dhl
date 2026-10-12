@@ -18,7 +18,7 @@
     value: dhl_benelux
     property: components.schemas.CarriersEnum
     detected_by: detect-carrier-edges.py
-    detected: '2026-10-12'
+    detected: '2026-10-13'
     spec_url: https://docs.goshippo.com/spec/shippoapi/public-api.yaml
   status: not-a-workflow
   arazzo: null
@@ -37,7 +37,7 @@
     value: dhl_express
     property: schemas.TrackingData.carrier_name
     detected_by: detect-carrier-edges.py
-    detected: '2026-10-12'
+    detected: '2026-10-13'
   status: not-a-workflow
   arazzo: null
 - slug: dhl-shipcloud
@@ -55,7 +55,7 @@
     value: dhl
     property: components.schemas.carrier_shipping
     detected_by: detect-carrier-edges.py
-    detected: '2026-10-12'
+    detected: '2026-10-13'
   status: not-a-workflow
   arazzo: null
 - slug: dhl-17track

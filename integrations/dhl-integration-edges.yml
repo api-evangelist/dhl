@@ -612,14 +612,14 @@ edges:
   relationship: carrier-coverage
   evidence: https://docs.goshippo.com/spec/shippoapi/public-api.yaml
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   contract_reference:
     repo: shippo
     spec_file: public-api.yaml
     value: dhl_benelux
     property: components.schemas.CarriersEnum
     detected_by: detect-carrier-edges.py
-    detected: '2026-10-12'
+    detected: '2026-10-13'
     spec_url: https://docs.goshippo.com/spec/shippoapi/public-api.yaml
 - partner_name: karrio
   partner: karrio
@@ -630,14 +630,14 @@ edges:
   relationship: carrier-coverage
   evidence: https://github.com/api-evangelist/karrio/blob/main/openapi/karrio-batches-api-openapi.yml
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   contract_reference:
     repo: karrio
     spec_file: karrio-batches-api-openapi.yml
     value: dhl_express
     property: schemas.TrackingData.carrier_name
     detected_by: detect-carrier-edges.py
-    detected: '2026-10-12'
+    detected: '2026-10-13'
 - partner_name: shipcloud
   partner: shipcloud
   partner_match: aggregator
@@ -647,14 +647,14 @@ edges:
   relationship: carrier-coverage
   evidence: https://github.com/api-evangelist/shipcloud/blob/main/openapi/shipcloud-carriers-api-openapi.yml
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   contract_reference:
     repo: shipcloud
     spec_file: shipcloud-carriers-api-openapi.yml
     value: dhl
     property: components.schemas.carrier_shipping
     detected_by: detect-carrier-edges.py
-    detected: '2026-10-12'
+    detected: '2026-10-13'
 - partner_name: 17track
   partner: 17track
   partner_match: aggregator
@@ -664,6 +664,6 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:dhl.com
 templates: []
