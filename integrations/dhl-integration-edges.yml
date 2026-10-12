@@ -603,21 +603,6 @@ marketplace_apps:
   - zscaler-zia
   - zulip
 edges:
-- partner_name: ankorstore
-  partner: ankorstore
-  partner_match: domain
-  type: contract
-  channel: partner-built
-  relationship: processor-connection
-  direction: partner-built
-  evidence: https://github.com/api-evangelist/ankorstore/blob/main/openapi/ankorstore-testing-api-openapi.yml
-  contract_reference:
-    repo: ankorstore
-    spec_file: ankorstore-testing-api-openapi.yml
-    value: dhl
-    property: shippingOverview.provider
-    detected_by: detect-payment-method-edges.py
-    detected: '2026-10-12'
 - partner_name: shippo
   partner: shippo
   partner_match: aggregator
