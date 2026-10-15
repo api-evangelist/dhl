@@ -92,7 +92,7 @@
     node_path: Dhl
     trigger: false
     builder: n8n (built-in node)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: dhl-pipedream
   label: Pipedream
@@ -118,7 +118,7 @@
     actions: true
     sources: false
     builder: Pipedream repo (component)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: dhl-wordpress-own
   label: WordPress (own)
