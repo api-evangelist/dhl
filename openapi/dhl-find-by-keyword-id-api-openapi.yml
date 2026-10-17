@@ -41,6 +41,16 @@ paths:
       - Find By Keyword Id
 components:
   schemas:
+    ServicePointList:
+      type: object
+      additionalProperties: true
+      properties:
+        url:
+          type: string
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ServicePoint'
     ServicePoint:
       type: object
       additionalProperties: true
@@ -55,16 +65,6 @@ components:
         place:
           type: object
           additionalProperties: true
-    ServicePointList:
-      type: object
-      additionalProperties: true
-      properties:
-        url:
-          type: string
-        locations:
-          type: array
-          items:
-            $ref: '#/components/schemas/ServicePoint'
   securitySchemes:
     apiKey:
       type: apiKey
