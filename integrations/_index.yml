@@ -69,19 +69,6 @@
   relationship: carrier-coverage
   status: not-a-workflow
   arazzo: null
-- slug: dhl-wordpress-own
-  label: WordPress (own)
-  partner: wordpress
-  partner_name: WordPress (own)
-  category: WordPress plugin
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://wordpress.org/plugins/dhl-ecom-sweden/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: dhl-n8n
   label: n8n
   partner: n8n
@@ -131,5 +118,31 @@
     actions: true
     sources: false
     builder: Pipedream repo (component)
+  status: not-a-workflow
+  arazzo: null
+- slug: dhl-wordpress-own
+  label: WordPress (own)
+  partner: wordpress
+  partner_name: WordPress (own)
+  category: WordPress plugin
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://wordpress.org/plugins/dhl-ecom-sweden/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: dhl-bigcommerce-own
+  label: BigCommerce (own)
+  partner: bigcommerce
+  partner_name: BigCommerce (own)
+  category: Shipping & Fulfillment, Fulfillment & Delivery
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.bigcommerce.com/apps/dhl-express/
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
