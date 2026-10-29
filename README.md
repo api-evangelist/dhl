@@ -1,4 +1,4 @@
-# DHL (dhl)
+# DHL
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,853 +66,173 @@
 
 DHL is a global logistics company that provides a wide range of services, including express delivery, freight transportation, supply chain solutions, and e-commerce services. As one of the largest logistics companies in the world, DHL operates in over 220 countries and territories, connecting businesses and individuals with seamless and reliable shipping solutions. The DHL API Developer Portal exposes APIs across the company's business divisions including DHL eCommerce, DHL Express, DHL Global Forwarding, DHL Freight, DHL Supply Chain, and Post and Parcel Germany.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/dhl/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/dhl/refs/heads/main/apis.yml)
+**Areas:** Freight · Logistics · Shipping · E-Commerce · Tracking
+
+## DHL on APIs.io
+
+Everything profiled for DHL is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/dhl/](https://apis.io/providers/dhl/)** — or go straight to one of the APIs or properties below.
+
+### APIs (51)
+
+- [Shipment Tracking Unified](https://apis.io/apis/dhl/shipment-tracking-unified/) — Provides shipment status access across DHL Freight, DHL eCommerce, DHL Supply Chain, DHL Global Forwarding, and Post and Parcel Germany through a single…
+- [Shipment Tracking Unified Push](https://apis.io/apis/dhl/shipment-tracking-unified-push/) — Push-based variant of the Shipment Tracking Unified API that proactively sends updates on shipment status to subscribed consumers across DHL divisions.
+- [User Guide DHL eCommerce Americas](https://apis.io/apis/dhl/user-guide-dhl-ecommerce-americas/) — One-stop solution for shipping products including duty and tax calculations, shipping labels, manifests, and tracking for DHL eCommerce Americas customers.
+- [Additional Services DHL Freight](https://apis.io/apis/dhl/additional-services-dhl-freight/) — Validates which additional services combine with DHL Freight products for European palletized road freight transport.
+- [Authentication DHL eCommerce Americas](https://apis.io/apis/dhl/authentication-dhl-ecommerce-americas/) — Access token generation endpoint for authenticating against DHL eCommerce Americas services.
+- [Authentication API DHL Freight](https://apis.io/apis/dhl/authentication-api-dhl-freight/) — Provides authentication services for DHL Group freight operations across European road freight products.
+- [Authentication API Post Parcel Germany](https://apis.io/apis/dhl/authentication-api-post-parcel-germany/) — Authentication for business customers of Deutsche Post and Parcel Germany services.
+- [Changelog DHL eCommerce Americas](https://apis.io/apis/dhl/changelog-dhl-ecommerce-americas/) — Documents product updates, features, enhancements, and bug fixes for DHL eCommerce Americas APIs.
+- [DATAFACTORY AUTOCOMPLETE 2.0](https://apis.io/apis/dhl/datafactory-autocomplete-20-post-parcel-germany/) — Automatic postal data completion service for streamlined address entry across Post and Parcel Germany products.
+- [Deutsche Post Hybrid Mail Shipments E-POST](https://apis.io/apis/dhl/deutsche-post-hybrid-mail-shipments-e-post-post-parcel-germany/) — Allows business customers to send PDF documents as physical mail shipments via Deutsche Post with tracking.
+- [Deutsche Post International](https://apis.io/apis/dhl/deutsche-post-international-post-parcel-germany/) — Creates labels for international mail, lightweight items, and merchandise shipments via Deutsche Post.
+- [Deutsche Post INTERNETMARKE](https://apis.io/apis/dhl/deutsche-post-internetmarke-post-parcel-germany/) — Provides online postage purchase for domestic and international mail products from Deutsche Post.
+- [Deutsche Post Order Management AM](https://apis.io/apis/dhl/deutsche-post-order-management-am-post-parcel-germany/) — Electronic order management for Deutsche Post commercial and logistics processes.
+- [Deutsche Post Print-Mailing Dispatch Preparation](https://apis.io/apis/dhl/deutsche-post-print-mailing-dispatch-preparation-post-parcel-germany/) — Manages dialogue marketing print mailings including pricing, documents, and franking workflows.
+- [Deutsche Post Print-Mailing Targeting](https://apis.io/apis/dhl/deutsche-post-print-mailing-targeting-post-parcel-germany/) — Plans dialogue marketing campaigns with target groups and recipient data for print mailings.
+- [DHL eCommerce Europe eConnect](https://apis.io/apis/dhl/ecommerce-europe-econnect/) — Enables cross-border European shipments including Parcel Connect and return services across DHL eCommerce Europe.
+- [DHL eCommerce Europe eConnect Beta](https://apis.io/apis/dhl/ecommerce-europe-econnect-beta/) — Beta features documentation for enhanced eCommerce European shipping capabilities ahead of general availability.
+- [DHL Parcel DE Pickup](https://apis.io/apis/dhl/dhl-parcel-de-pickup/) — Place pickup orders and query pickup locations and status details for DHL Parcel Germany.
+- [DHL Parcel DE Postnumber](https://apis.io/apis/dhl/dhl-parcel-de-postnumber/) — Validates postnumbers to ensure deliverability of shipments to Deutsche Post and DHL parcel lockers.
+- [DHL Parcel DE Private Shipping](https://apis.io/apis/dhl/dhl-parcel-de-private-shipping/) — API to create DHL private customer shipments for domestic and international destinations from Germany.
+- [DHL Parcel DE Returns](https://apis.io/apis/dhl/dhl-parcel-de-returns/) — Creation of return labels for end customers across European countries shipping back to DHL Parcel Germany.
+- [DHL Parcel DE Shipping](https://apis.io/apis/dhl/dhl-parcel-de-shipping/) — Designed for business customers of DHL Parcel Germany to manage and create shipment labels.
+- [DHL Parcel DE Tracking](https://apis.io/apis/dhl/dhl-parcel-de-tracking/) — Allows DHL Parcel Germany customers to query the shipment status and history of shipments.
+- [Document DHL Global Forwarding](https://apis.io/apis/dhl/dgf-document/) — Downloads electronic documents from DHL Global Forwarding freight forwarding systems for air and ocean freight.
+- [Duty and Tax DHL eCommerce Americas](https://apis.io/apis/dhl/duty-tax-dhl-ecommerce-americas/) — Calculates duties and taxes for cross-border shipments processed through DHL eCommerce Americas.
+- [Duty and Tax Calculator Unified](https://apis.io/apis/dhl/duty-and-tax-calculator/) — Carrier-agnostic duty and tax calculator that works with any global carrier; includes a 30-day free trial offering from DHL.
+- [DHL eCommerce UK](https://apis.io/apis/dhl/ecommerce-uk/) — Handles domestic and international parcel shipments originating from the United Kingdom through DHL eCommerce.
+- [Parcel EU BE LU NL](https://apis.io/apis/dhl/parcel-eu/) — Creates labels for shipments across Belgium, Luxembourg, and the Netherlands under DHL Parcel EU.
+- [Pickup Cancellation DHL eCommerce India](https://apis.io/apis/dhl/pickup-cancellation-dhl-ecommerce-india-blue-dart/) — Allows registered Blue Dart customers in India to cancel scheduled shipment pickups via DHL eCommerce India.
+- [Price Quote DHL Freight](https://apis.io/apis/dhl/price-quote-dhl-freight/) — Provides pricing for road freight shipments across Europe through DHL Freight.
+- [Print DHL Freight](https://apis.io/apis/dhl/print-dhl-freight/) — Creates barcode labels in GS1 or ANSIFACT formats and related shipment documents for DHL Freight.
+- [Product DHL Freight](https://apis.io/apis/dhl/product-dhl-freight/) — Determines available product codes for European road freight bookings through DHL Freight.
+- [Product and Sub-Product Pickup Detail DHL eCommerce India](https://apis.io/apis/dhl/product-and-sub-product-pickup-detail-dhl-ecommerce-india-blue-dart/) — Retrieves detailed pickup information and product or sub-product codes for Blue Dart in India.
+- [Product Finder DHL eCommerce Americas](https://apis.io/apis/dhl/product-finder-dhl-ecommerce-americas/) — Obtains shipping products, rates, and delivery estimates for DHL eCommerce Americas shipments.
+- [Products API Post Parcel Germany](https://apis.io/apis/dhl/products-api-post-parcel-germany/) — Accesses Deutsche Post product portfolio for Internetmarke partners and integrated business customers.
+- [Push API DHL Global Forwarding](https://apis.io/apis/dhl/dgf-push-api/) — Enables subscription-based push message delivery for DHL Global Forwarding freight shipments.
+- [References DHL eCommerce Americas](https://apis.io/apis/dhl/references-dhl-ecommerce-americas/) — Provides reference data for products, fields, and glossary information across DHL eCommerce Americas APIs.
+- [Registration for Pickup DHL eCommerce India](https://apis.io/apis/dhl/registration-pickup-dhl-ecommerce-india-blue-dart/) — Allows Blue Dart customers in India to schedule pickups for shipment orders through DHL eCommerce India.
+- [Return Label DHL eCommerce Americas](https://apis.io/apis/dhl/return-label-dhl-ecommerce-americas/) — Enables creation and retrieval of domestic return labels for shipments handled by DHL eCommerce Americas.
+- [Shipment Booking DHL Freight](https://apis.io/apis/dhl/shipment-booking-dhl-freight/) — Creates European palletized road freight transport orders through DHL Freight.
+- [Shipment Booking DHL Global Forwarding](https://apis.io/apis/dhl/dgf-shipment-booking/) — Enables shipment and transport bookings for multiple freight types via DHL Global Forwarding.
+- [Shipment Label DHL Global Forwarding](https://apis.io/apis/dhl/shipment-label-dhl-global-forwarding/) — Generates shipment labels for air and ocean freight handled by DHL Global Forwarding.
+- [Shipment Status DHL Global Forwarding](https://apis.io/apis/dhl/dgf-shipment-status/) — Provides access to the latest shipment event information for DHL Global Forwarding consignments.
+- [Shipment Tracking DHL eCommerce India](https://apis.io/apis/dhl/shipment-tracking-dhl-ecommerce-india-blue-dart/) — Delivers detailed shipment information and current status for Blue Dart shipments via DHL eCommerce India.
+- [Shipment Tracking v2 DHL Global Forwarding](https://apis.io/apis/dhl/shipment-tracking-v2-dhl-global-forwarding/) — Provides comprehensive tracking including emissions and routing data for DHL Global Forwarding shipments.
+- [Time Table DHL Freight](https://apis.io/apis/dhl/time-table-dhl-freight/) — Determines available product codes and projected delivery dates for DHL Freight European road shipments.
+- [Tracking DHL eCommerce Americas](https://apis.io/apis/dhl/tracking-dhl-ecommerce-americas/) — Track single or multiple packages and manifest shipments handled by DHL eCommerce Americas.
+- [DHL Find By Address API](https://apis.io/apis/dhl/dhl-find-by-address-api/) — The Find By Address API from DHL — 1 operation(s) for find by address.
+- [DHL Find By Geo API](https://apis.io/apis/dhl/dhl-find-by-geo-api/) — The Find By Geo API from DHL — 1 operation(s) for find by geo.
+- [DHL Find By Keyword Id API](https://apis.io/apis/dhl/dhl-find-by-keyword-id-api/) — The Find By Keyword Id API from DHL — 1 operation(s) for find by keyword id.
+- [DHL Find By Location Id API](https://apis.io/apis/dhl/dhl-find-by-location-id-api/) — The Find By Location Id API from DHL — 1 operation(s) for find by location id.
 
-## Scope
+### Published properties
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Tags
+#### GraphQL (1)
 
-- Freight
-- Logistics
-- Shipping
-- eCommerce
-- Tracking
+GraphQL schemas.
 
-## Timestamps
+- [Moved to /providers/dhl/](https://apis.io/graphqls/dhl/dhl-graphql/)
 
-- **Created:** 2025-03-01
-- **Modified:** 2026-05-19
+#### Agentic access (1)
 
-## APIs
+Which operations an agent can call, which act, and which need a human in the loop.
 
-### Location Finder Unified
+- [Dhl Agentic Access](https://apis.io/agentic-access/dhl/dhl-agentic-access/)
 
-Provides a single interface to discover all DHL locations that handle parcels and letters across multiple DHL divisions including Post and Parcel Germany, DHL Express, DHL eCommerce, and DHL Freight.
+#### Collections (5)
 
-- **Human URL:** [https://developer.dhl.com/api-reference/location-finder-unified](https://developer.dhl.com/api-reference/location-finder-unified)
+Postman and Open Collection request collections.
 
-#### Tags
+- [DHL Location Finder Unified API](https://apis.io/collections/dhl/open-dhl/)
+- [DHL Location Finder Unified Find By Address API](https://apis.io/collections/dhl/open-dhl-find-by-address-api/)
+- [DHL Location Finder Unified Find By Address Find By Geo API](https://apis.io/collections/dhl/open-dhl-find-by-geo-api/)
+- [DHL Location Finder Unified Find By Address Find By Keyword Id API](https://apis.io/collections/dhl/open-dhl-find-by-keyword-id-api/)
+- [DHL Location Finder Unified Find By Address Find By Location Id API](https://apis.io/collections/dhl/open-dhl-find-by-location-id-api/)
 
-- Locations
-- Logistics
+#### Security (2)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Documentation](https://developer.dhl.com/api-reference/location-finder-unified)
-- [OpenAPI](openapi/dhl-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Dhl Authentication](https://apis.io/security/dhl/dhl-authentication/)
+- [Dhl Domain Security](https://apis.io/security/dhl/dhl-domain-security/)
 
-### Shipment Tracking Unified
+#### Plans and pricing (1)
 
-Provides shipment status access across DHL Freight, DHL eCommerce, DHL Supply Chain, DHL Global Forwarding, and Post and Parcel Germany through a single unified tracking interface.
+Published plans, tiers and prices.
 
-- **Human URL:** [https://developer.dhl.com/api-reference/shipment-tracking](https://developer.dhl.com/api-reference/shipment-tracking)
+- [Dhl Plans Pricing](https://apis.io/plans/dhl/dhl-plans-pricing/)
 
-#### Tags
+#### Rate limits (1)
 
-- Tracking
-- Shipping
+Published request limits.
 
-#### Properties
+- [Dhl Rate Limits](https://apis.io/rate-limits/dhl/dhl-rate-limits/)
 
-- [Documentation](https://developer.dhl.com/api-reference/shipment-tracking)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### FinOps (1)
 
-### Shipment Tracking Unified Push
+What the API costs to run, by operation.
 
-Push-based variant of the Shipment Tracking Unified API that proactively sends updates on shipment status to subscribed consumers across DHL divisions.
+- [Dhl Finops](https://apis.io/finops/dhl/dhl-finops/)
 
-- **Human URL:** [https://developer.dhl.com/api-reference/shipment-tracking-unified-push](https://developer.dhl.com/api-reference/shipment-tracking-unified-push)
+## Where to find this API
 
-#### Tags
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- Tracking
-- Push
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/shipment-tracking-unified-push)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### User Guide DHL eCommerce Americas
-
-One-stop solution for shipping products including duty and tax calculations, shipping labels, manifests, and tracking for DHL eCommerce Americas customers.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/user-guide-dhl-ecommerce-americas](https://developer.dhl.com/api-reference/user-guide-dhl-ecommerce-americas)
-
-#### Tags
-
-- eCommerce
-- Americas
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/user-guide-dhl-ecommerce-americas)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Additional Services DHL Freight
-
-Validates which additional services combine with DHL Freight products for European palletized road freight transport.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/additional-services-dhl-freight](https://developer.dhl.com/api-reference/additional-services-dhl-freight)
-
-#### Tags
-
-- Freight
-- Services
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/additional-services-dhl-freight)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Authentication DHL eCommerce Americas
-
-Access token generation endpoint for authenticating against DHL eCommerce Americas services.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/authentication-dhl-ecommerce-americas](https://developer.dhl.com/api-reference/authentication-dhl-ecommerce-americas)
-
-#### Tags
-
-- Authentication
-- eCommerce
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/authentication-dhl-ecommerce-americas)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Authentication API DHL Freight
-
-Provides authentication services for DHL Group freight operations across European road freight products.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/authentication-api-dhl-freight](https://developer.dhl.com/api-reference/authentication-api-dhl-freight)
-
-#### Tags
-
-- Authentication
-- Freight
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/authentication-api-dhl-freight)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Authentication API Post Parcel Germany
-
-Authentication for business customers of Deutsche Post and Parcel Germany services.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/authentication-api-post-parcel-germany](https://developer.dhl.com/api-reference/authentication-api-post-parcel-germany)
-
-#### Tags
-
-- Authentication
-- Germany
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/authentication-api-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Changelog DHL eCommerce Americas
-
-Documents product updates, features, enhancements, and bug fixes for DHL eCommerce Americas APIs.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/changelog-dhl-ecommerce-americas](https://developer.dhl.com/api-reference/changelog-dhl-ecommerce-americas)
-
-#### Tags
-
-- Changelog
-- eCommerce
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/changelog-dhl-ecommerce-americas)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### DATAFACTORY AUTOCOMPLETE 2.0
-
-Automatic postal data completion service for streamlined address entry across Post and Parcel Germany products.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/datafactory-autocomplete-20-post-parcel-germany](https://developer.dhl.com/api-reference/datafactory-autocomplete-20-post-parcel-germany)
-
-#### Tags
-
-- Address
-- Germany
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/datafactory-autocomplete-20-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Deutsche Post Hybrid Mail Shipments E-POST
-
-Allows business customers to send PDF documents as physical mail shipments via Deutsche Post with tracking.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/deutsche-post-hybrid-mail-shipments-e-post-post-parcel-germany](https://developer.dhl.com/api-reference/deutsche-post-hybrid-mail-shipments-e-post-post-parcel-germany)
-
-#### Tags
-
-- Mail
-- Germany
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/deutsche-post-hybrid-mail-shipments-e-post-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Deutsche Post International
-
-Creates labels for international mail, lightweight items, and merchandise shipments via Deutsche Post.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/deutsche-post-international-post-parcel-germany](https://developer.dhl.com/api-reference/deutsche-post-international-post-parcel-germany)
-
-#### Tags
-
-- Mail
-- International
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/deutsche-post-international-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Deutsche Post INTERNETMARKE
-
-Provides online postage purchase for domestic and international mail products from Deutsche Post.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/deutsche-post-internetmarke-post-parcel-germany](https://developer.dhl.com/api-reference/deutsche-post-internetmarke-post-parcel-germany)
-
-#### Tags
-
-- Postage
-- Germany
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/deutsche-post-internetmarke-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Deutsche Post Order Management AM
-
-Electronic order management for Deutsche Post commercial and logistics processes.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/deutsche-post-order-management-am-post-parcel-germany](https://developer.dhl.com/api-reference/deutsche-post-order-management-am-post-parcel-germany)
-
-#### Tags
-
-- Orders
-- Germany
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/deutsche-post-order-management-am-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Deutsche Post Print-Mailing Dispatch Preparation
-
-Manages dialogue marketing print mailings including pricing, documents, and franking workflows.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/deutsche-post-print-mailing-dispatch-preparation-post-parcel-germany](https://developer.dhl.com/api-reference/deutsche-post-print-mailing-dispatch-preparation-post-parcel-germany)
-
-#### Tags
-
-- Marketing
-- Mail
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/deutsche-post-print-mailing-dispatch-preparation-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Deutsche Post Print-Mailing Targeting
-
-Plans dialogue marketing campaigns with target groups and recipient data for print mailings.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/deutsche-post-print-mailing-targeting-post-parcel-germany](https://developer.dhl.com/api-reference/deutsche-post-print-mailing-targeting-post-parcel-germany)
-
-#### Tags
-
-- Marketing
-- Targeting
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/deutsche-post-print-mailing-targeting-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### DHL eCommerce Europe eConnect
-
-Enables cross-border European shipments including Parcel Connect and return services across DHL eCommerce Europe.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/ecommerce-europe](https://developer.dhl.com/api-reference/ecommerce-europe)
-
-#### Tags
-
-- eCommerce
-- Europe
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/ecommerce-europe)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### DHL eCommerce Europe eConnect Beta
-
-Beta features documentation for enhanced eCommerce European shipping capabilities ahead of general availability.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/dhl-ecommerce-europe-econnect-beta](https://developer.dhl.com/api-reference/dhl-ecommerce-europe-econnect-beta)
-
-#### Tags
-
-- eCommerce
-- Beta
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/dhl-ecommerce-europe-econnect-beta)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### DHL Parcel DE Pickup
-
-Place pickup orders and query pickup locations and status details for DHL Parcel Germany.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/dhl-parcel-de-pickup-post-parcel-germany](https://developer.dhl.com/api-reference/dhl-parcel-de-pickup-post-parcel-germany)
-
-#### Tags
-
-- Pickup
-- Germany
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/dhl-parcel-de-pickup-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### DHL Parcel DE Postnumber
-
-Validates postnumbers to ensure deliverability of shipments to Deutsche Post and DHL parcel lockers.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/dhl-parcel-de-postnumber-post-parcel-germany](https://developer.dhl.com/api-reference/dhl-parcel-de-postnumber-post-parcel-germany)
-
-#### Tags
-
-- Validation
-- Germany
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/dhl-parcel-de-postnumber-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### DHL Parcel DE Private Shipping
-
-API to create DHL private customer shipments for domestic and international destinations from Germany.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/dhl-parcel-de-private-shipping-post-parcel-germany](https://developer.dhl.com/api-reference/dhl-parcel-de-private-shipping-post-parcel-germany)
-
-#### Tags
-
-- Shipping
-- Germany
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/dhl-parcel-de-private-shipping-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### DHL Parcel DE Returns
-
-Creation of return labels for end customers across European countries shipping back to DHL Parcel Germany.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/dhl-parcel-de-returns-post-parcel-germany](https://developer.dhl.com/api-reference/dhl-parcel-de-returns-post-parcel-germany)
-
-#### Tags
-
-- Returns
-- Germany
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/dhl-parcel-de-returns-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### DHL Parcel DE Shipping
-
-Designed for business customers of DHL Parcel Germany to manage and create shipment labels.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/parcel-de-shipping-post-parcel-germany-v2](https://developer.dhl.com/api-reference/parcel-de-shipping-post-parcel-germany-v2)
-
-#### Tags
-
-- Shipping
-- Germany
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/parcel-de-shipping-post-parcel-germany-v2)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### DHL Parcel DE Tracking
-
-Allows DHL Parcel Germany customers to query the shipment status and history of shipments.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/dhl-parcel-de-shipment-tracking-post-parcel-germany](https://developer.dhl.com/api-reference/dhl-parcel-de-shipment-tracking-post-parcel-germany)
-
-#### Tags
-
-- Tracking
-- Germany
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/dhl-parcel-de-shipment-tracking-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Document DHL Global Forwarding
-
-Downloads electronic documents from DHL Global Forwarding freight forwarding systems for air and ocean freight.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/dgf-document](https://developer.dhl.com/api-reference/dgf-document)
-
-#### Tags
-
-- Documents
-- Forwarding
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/dgf-document)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Duty and Tax DHL eCommerce Americas
-
-Calculates duties and taxes for cross-border shipments processed through DHL eCommerce Americas.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/duty-tax-dhl-ecommerce-americas](https://developer.dhl.com/api-reference/duty-tax-dhl-ecommerce-americas)
-
-#### Tags
-
-- Duty
-- Tax
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/duty-tax-dhl-ecommerce-americas)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Duty and Tax Calculator Unified
-
-Carrier-agnostic duty and tax calculator that works with any global carrier; includes a 30-day free trial offering from DHL.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/duty-and-tax-calculator](https://developer.dhl.com/api-reference/duty-and-tax-calculator)
-
-#### Tags
-
-- Duty
-- Tax
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/duty-and-tax-calculator)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### DHL eCommerce UK
-
-Handles domestic and international parcel shipments originating from the United Kingdom through DHL eCommerce.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/ecommerce-uk](https://developer.dhl.com/api-reference/ecommerce-uk)
-
-#### Tags
-
-- eCommerce
-- United Kingdom
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/ecommerce-uk)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Parcel EU BE LU NL
-
-Creates labels for shipments across Belgium, Luxembourg, and the Netherlands under DHL Parcel EU.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/parcel-eu](https://developer.dhl.com/api-reference/parcel-eu)
-
-#### Tags
-
-- Parcel
-- Europe
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/parcel-eu)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Pickup Cancellation DHL eCommerce India
-
-Allows registered Blue Dart customers in India to cancel scheduled shipment pickups via DHL eCommerce India.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/pickup-cancellation-dhl-ecommerce-india-blue-dart](https://developer.dhl.com/api-reference/pickup-cancellation-dhl-ecommerce-india-blue-dart)
-
-#### Tags
-
-- Pickup
-- India
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/pickup-cancellation-dhl-ecommerce-india-blue-dart)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Price Quote DHL Freight
-
-Provides pricing for road freight shipments across Europe through DHL Freight.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/price-quote-dhl-freight](https://developer.dhl.com/api-reference/price-quote-dhl-freight)
-
-#### Tags
-
-- Pricing
-- Freight
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/price-quote-dhl-freight)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Print DHL Freight
-
-Creates barcode labels in GS1 or ANSIFACT formats and related shipment documents for DHL Freight.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/print-dhl-freight](https://developer.dhl.com/api-reference/print-dhl-freight)
-
-#### Tags
-
-- Print
-- Freight
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/print-dhl-freight)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Product DHL Freight
-
-Determines available product codes for European road freight bookings through DHL Freight.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/product-dhl-freight](https://developer.dhl.com/api-reference/product-dhl-freight)
-
-#### Tags
-
-- Products
-- Freight
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/product-dhl-freight)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Product and Sub-Product Pickup Detail DHL eCommerce India
-
-Retrieves detailed pickup information and product or sub-product codes for Blue Dart in India.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/product-and-sub-product-pickup-detail-dhl-ecommerce-india-blue-dart](https://developer.dhl.com/api-reference/product-and-sub-product-pickup-detail-dhl-ecommerce-india-blue-dart)
-
-#### Tags
-
-- Products
-- India
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/product-and-sub-product-pickup-detail-dhl-ecommerce-india-blue-dart)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Product Finder DHL eCommerce Americas
-
-Obtains shipping products, rates, and delivery estimates for DHL eCommerce Americas shipments.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/product-finder-dhl-ecommerce-americas](https://developer.dhl.com/api-reference/product-finder-dhl-ecommerce-americas)
-
-#### Tags
-
-- Products
-- Americas
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/product-finder-dhl-ecommerce-americas)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Products API Post Parcel Germany
-
-Accesses Deutsche Post product portfolio for Internetmarke partners and integrated business customers.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/products-api-post-parcel-germany](https://developer.dhl.com/api-reference/products-api-post-parcel-germany)
-
-#### Tags
-
-- Products
-- Germany
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/products-api-post-parcel-germany)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Push API DHL Global Forwarding
-
-Enables subscription-based push message delivery for DHL Global Forwarding freight shipments.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/dgf-push-api](https://developer.dhl.com/api-reference/dgf-push-api)
-
-#### Tags
-
-- Push
-- Forwarding
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/dgf-push-api)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### References DHL eCommerce Americas
-
-Provides reference data for products, fields, and glossary information across DHL eCommerce Americas APIs.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/references-dhl-ecommerce-americas](https://developer.dhl.com/api-reference/references-dhl-ecommerce-americas)
-
-#### Tags
-
-- Reference
-- eCommerce
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/references-dhl-ecommerce-americas)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Registration for Pickup DHL eCommerce India
-
-Allows Blue Dart customers in India to schedule pickups for shipment orders through DHL eCommerce India.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/registration-pickup-dhl-ecommerce-india-blue-dart](https://developer.dhl.com/api-reference/registration-pickup-dhl-ecommerce-india-blue-dart)
-
-#### Tags
-
-- Pickup
-- India
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/registration-pickup-dhl-ecommerce-india-blue-dart)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Return Label DHL eCommerce Americas
-
-Enables creation and retrieval of domestic return labels for shipments handled by DHL eCommerce Americas.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/return-label-dhl-ecommerce-americas](https://developer.dhl.com/api-reference/return-label-dhl-ecommerce-americas)
-
-#### Tags
-
-- Returns
-- Americas
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/return-label-dhl-ecommerce-americas)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Shipment Booking DHL Freight
-
-Creates European palletized road freight transport orders through DHL Freight.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/shipment-booking-dhl-freight](https://developer.dhl.com/api-reference/shipment-booking-dhl-freight)
-
-#### Tags
-
-- Booking
-- Freight
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/shipment-booking-dhl-freight)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Shipment Booking DHL Global Forwarding
-
-Enables shipment and transport bookings for multiple freight types via DHL Global Forwarding.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/dgf-shipment-booking](https://developer.dhl.com/api-reference/dgf-shipment-booking)
-
-#### Tags
-
-- Booking
-- Forwarding
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/dgf-shipment-booking)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Shipment Label DHL Global Forwarding
-
-Generates shipment labels for air and ocean freight handled by DHL Global Forwarding.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/shipment-label-dhl-global-forwarding](https://developer.dhl.com/api-reference/shipment-label-dhl-global-forwarding)
-
-#### Tags
-
-- Labels
-- Forwarding
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/shipment-label-dhl-global-forwarding)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Shipment Status DHL Global Forwarding
-
-Provides access to the latest shipment event information for DHL Global Forwarding consignments.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/dgf-shipment-status](https://developer.dhl.com/api-reference/dgf-shipment-status)
-
-#### Tags
-
-- Status
-- Forwarding
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/dgf-shipment-status)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Shipment Tracking DHL eCommerce India
-
-Delivers detailed shipment information and current status for Blue Dart shipments via DHL eCommerce India.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/shipment-tracking-dhl-ecommerce-india-blue-dart](https://developer.dhl.com/api-reference/shipment-tracking-dhl-ecommerce-india-blue-dart)
-
-#### Tags
-
-- Tracking
-- India
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/shipment-tracking-dhl-ecommerce-india-blue-dart)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Shipment Tracking v2 DHL Global Forwarding
-
-Provides comprehensive tracking including emissions and routing data for DHL Global Forwarding shipments.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/shipment-tracking-v2-dhl-global-forwarding](https://developer.dhl.com/api-reference/shipment-tracking-v2-dhl-global-forwarding)
-
-#### Tags
-
-- Tracking
-- Forwarding
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/shipment-tracking-v2-dhl-global-forwarding)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Time Table DHL Freight
-
-Determines available product codes and projected delivery dates for DHL Freight European road shipments.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/time-table-dhl-freight](https://developer.dhl.com/api-reference/time-table-dhl-freight)
-
-#### Tags
-
-- Schedule
-- Freight
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/time-table-dhl-freight)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Tracking DHL eCommerce Americas
-
-Track single or multiple packages and manifest shipments handled by DHL eCommerce Americas.
-
-- **Human URL:** [https://developer.dhl.com/api-reference/tracking-dhl-ecommerce-americas](https://developer.dhl.com/api-reference/tracking-dhl-ecommerce-americas)
-
-#### Tags
-
-- Tracking
-- Americas
-
-#### Properties
-
-- [Documentation](https://developer.dhl.com/api-reference/tracking-dhl-ecommerce-americas)
-- [Postman Collection](collections/dhl.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dhl.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/dhl)
+- [Website](https://dhl.com)
 - [Documentation](https://developer.dhl.com/)
-- [A P I Catalog](https://developer.dhl.com/api-catalog)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 24.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 42.9 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 7.9 |
+
+**Agent readiness 24.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/dhl/](https://apis.io/providers/dhl/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for DHL: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/dhl/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
